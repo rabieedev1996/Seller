@@ -1,13 +1,18 @@
 package DBRepositories
 
 import (
+	"Seller/Config"
 	"fmt"
 	"gorm.io/gorm"
 	"strings"
 )
 
 type GenericRepository[entity any] struct {
-	Context gorm.DB
+	Context *gorm.DB
+}
+
+func (r GenericRepository[entity]) Init() {
+	r.Context = Config.GetDatabaseConnection()
 }
 
 func (r GenericRepository[entity]) GetById(id int) entity {

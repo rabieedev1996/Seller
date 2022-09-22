@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="Initial">
-      <change afterPath="$PROJECT_DIR$/Seller.Api/main.go" afterDir="false" />
+    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="Entity and Repositories">
+      <change afterPath="$PROJECT_DIR$/Config/DatabaseConfig.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config/InjectionConfig/InjectionConfigFunctions.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config/InjectionConfig/InjectionConfigModels.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/UserRepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/ConfigVariables.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/InjectionConfig.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryPropertyRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryPropertyRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/IUserRepository.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/ProductRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/ProductRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/PropertiesValueRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/PropertiesValueRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/SelectableValueRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/SelectableValueRepository.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +67,10 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\DevelopSource\source\go\seller\Seller\Seller.Infrastructure\DBRepositories" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\DevelopSource\source\go\seller\Seller\Config" />
+      <recent name="F:\DevelopSource\source\go\seller\Seller\Config\InjectionConfig" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -84,6 +99,7 @@
       <workItem from="1663702848819" duration="3783000" />
       <workItem from="1663783676259" duration="4404000" />
       <workItem from="1663788438304" duration="6184000" />
+      <workItem from="1663852965581" duration="10873000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1663703099831</created>
@@ -92,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663703099831</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Entity and Repositories">
+      <created>1663853157710</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663853157710</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,7 +134,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial" />
+    <MESSAGE value="Entity and Repositories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entity and Repositories" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
