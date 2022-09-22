@@ -11,8 +11,8 @@ type SelectableValueRepository struct {
 	Generic Presistence.IGenericRepository[Entities.SelectableValue]
 }
 
-func (r SelectableValueRepository) Init() {
-	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.SelectableValue]](reflect.TypeOf(r.Generic))
+func (r SelectableValueRepository) Init(guid string) {
+	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.SelectableValue]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r SelectableValueRepository) GetById(id int) Entities.SelectableValue {

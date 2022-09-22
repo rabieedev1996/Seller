@@ -11,8 +11,8 @@ type PropertiesValueRepository struct {
 	Generic Presistence.IGenericRepository[Entities.PropertiesValue]
 }
 
-func (r PropertiesValueRepository) Init() {
-	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.PropertiesValue]](reflect.TypeOf(r.Generic))
+func (r PropertiesValueRepository) Init(guid string) {
+	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.PropertiesValue]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r PropertiesValueRepository) GetById(id int) Entities.PropertiesValue {

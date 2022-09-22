@@ -11,8 +11,8 @@ type CategoryPropertyRepository struct {
 	Generic Presistence.IGenericRepository[Entities.CategoryProperty]
 }
 
-func (r CategoryPropertyRepository) Init() {
-	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.CategoryProperty]](reflect.TypeOf(r.Generic))
+func (r CategoryPropertyRepository) Init(guid string) {
+	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.CategoryProperty]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r CategoryPropertyRepository) GetById(id int) Entities.CategoryProperty {

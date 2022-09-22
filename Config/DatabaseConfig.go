@@ -11,3 +11,11 @@ func GetDatabaseConnection() *gorm.DB {
 	db, _ := gorm.Open(postgres.Open(DbConnectionString), &gorm.Config{})
 	return db
 }
+
+type DatabaseConnection struct {
+	Context *gorm.DB
+}
+
+func (r DatabaseConnection) Init() {
+	r.Context = GetDatabaseConnection()
+}

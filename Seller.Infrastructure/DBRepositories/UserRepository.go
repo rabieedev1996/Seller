@@ -11,8 +11,8 @@ type UserRepository struct {
 	Generic Presistence.IGenericRepository[Entities.User]
 }
 
-func (r UserRepository) Init() {
-	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.User]](reflect.TypeOf(r.Generic))
+func (r UserRepository) Init(guid string) {
+	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.User]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r UserRepository) GetById(id int) Entities.User {

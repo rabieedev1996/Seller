@@ -2,8 +2,10 @@ package DBRepositories
 
 import (
 	"Seller/Config"
+	"Seller/Config/InjectionConfig"
 	"fmt"
 	"gorm.io/gorm"
+	"reflect"
 	"strings"
 )
 
@@ -11,8 +13,9 @@ type GenericRepository[entity any] struct {
 	Context *gorm.DB
 }
 
-func (r GenericRepository[entity]) Init() {
-	r.Context = Config.GetDatabaseConnection()
+func (r GenericRepository[entity]) Init(guid string) {
+	databaseConnection := InjectionConfig.PrepareObject[Config.DatabaseConnection](reflect.TypeOf(Config.DatabaseConnection{}), guid)
+	r.Context = databaseConnection.Context
 }
 
 func (r GenericRepository[entity]) GetById(id int) entity {
