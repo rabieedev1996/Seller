@@ -13,10 +13,13 @@ type InjectionTypes struct {
 	Scope     InjectionList
 	Transient InjectionList
 }
-
+type InjectionTypeItem struct {
+	InterfaceType reflect.Type
+	ObjectType    reflect.Type
+}
 type InjectedObject struct {
-	Object     any
-	ObjectType reflect.Type
+	Object       any
+	IntefaceType reflect.Type
 }
 
 type ScopeInjectedObject struct {

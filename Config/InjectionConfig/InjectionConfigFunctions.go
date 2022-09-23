@@ -1,8 +1,13 @@
 package InjectionConfig
 
-import "reflect"
+import (
+	"Seller/Seller.Application/Contract/Presistence"
+	"Seller/Seller.Domain/Entities"
+	"Seller/Seller.Infrastructure/DBRepositories"
+	"reflect"
+)
 
-type InjectionList []reflect.Type
+type InjectionList []InjectionTypeItem
 
 var injectionTypes InjectionTypes = InjectionTypes{
 	Scope:     InjectionList{},
@@ -13,81 +18,106 @@ var injectionTypes InjectionTypes = InjectionTypes{
 var SingletonObjects = []InjectedObject{}
 var ScopeObjects = []ScopeInjectedObject{}
 
-func AddToInjection(datatype reflect.Type, injectType int) {
+func InjectionConfig() {
+
+	var genericReppository Presistence.IGenericRepository[Entities.User]
+	var userRepository Presistence.IUserRepository
+	AddToInjection(reflect.TypeOf(genericReppository), reflect.TypeOf(DBRepositories.GenericRepository[Entities.User]{}), TRANSIANT)
+	AddToInjection(reflect.TypeOf(userRepository), reflect.TypeOf(DBRepositories.UserRepository{}), TRANSIANT)
+}
+
+func AddToInjection(interfaceType reflect.Type, objectType reflect.Type, injectType int) {
 	if injectType == SINGLETON {
-		injectionTypes.Singleton = append(injectionTypes.Singleton, datatype)
+		injectionTypes.Singleton = append(injectionTypes.Singleton, InjectionTypeItem{
+			InterfaceType: interfaceType,
+			ObjectType:    objectType,
+		})
 	} else if injectType == SCOPE {
-		injectionTypes.Scope = append(injectionTypes.Scope, datatype)
+		injectionTypes.Scope = append(injectionTypes.Scope, InjectionTypeItem{
+			InterfaceType: interfaceType,
+			ObjectType:    objectType,
+		})
 	} else if injectType == TRANSIANT {
-		injectionTypes.Transient = append(injectionTypes.Transient, datatype)
+		injectionTypes.Transient = append(injectionTypes.Transient, InjectionTypeItem{
+			InterfaceType: interfaceType,
+			ObjectType:    objectType,
+		})
 	}
 }
 
-func (list InjectionList) SearchInjectionType(datatype reflect.Type) reflect.Type {
+func (list InjectionList) SearchInjectionType(datatype reflect.Type) *InjectionTypeItem {
 	for _, dt := range list {
-		if dt == datatype {
-			return dt
+		if dt.InterfaceType == datatype {
+			return &dt
 		}
 	}
 	return nil
 }
 
 func PrepareObject[resultType any](datatype reflect.Type, guid string) resultType {
-	if injectionTypes.Scope.SearchInjectionType(datatype) != nil {
-		object := GetScopeObject(datatype, guid)
+
+	injectionType := injectionTypes.Scope.SearchInjectionType(datatype)
+	if injectionType != nil {
+		object := GetScopeObject(injectionType.InterfaceType, injectionType.ObjectType, guid)
 		return object
-	} else if injectionTypes.Singleton.SearchInjectionType(datatype) != nil {
-		object := GetTransiantObject(datatype)
+	}
+
+	injectionType = injectionTypes.Transient.SearchInjectionType(datatype)
+	if injectionType != nil {
+		object := GetTransiantObject(injectionType.InterfaceType, injectionType.ObjectType)
 		return object
-	} else if injectionTypes.Singleton.SearchInjectionType(datatype) != nil {
-		object := GetSinglletonObject(datatype)
+	}
+
+	injectionType = injectionTypes.Singleton.SearchInjectionType(datatype)
+	if injectionType != nil {
+		object := GetSinglletonObject(injectionType.InterfaceType, injectionType.ObjectType)
 		return object
 	}
 	return nil
 }
 
-func GetScopeObject[resultType any](datatype reflect.Type, guid string) any {
+func GetScopeObject[resultType any](interfaceType reflect.Type, objectType reflect.Type, guid string) any {
 	for _, Scope := range ScopeObjects {
 		if Scope.Guid == guid {
 			for _, Object := range Scope.Objects {
-				if Object.ObjectType == datatype {
+				if Object.IntefaceType == interfaceType {
 					return Object
 				}
 			}
-			object := reflect.New(datatype)
-			reflect.ValueOf(&object).MethodByName("Init").Call([]reflect.Value{})
+			object := reflect.New(objectType)
+			reflect.ValueOf(&object).MethodByName("Init").Call([]reflect.Value{reflect.ValueOf(guid)})
 			Scope.Objects = append(Scope.Objects, InjectedObject{
-				ObjectType: datatype,
-				Object:     object,
+				IntefaceType: interfaceType,
+				Object:       object,
 			})
 			return object
 		}
 	}
-	object := reflect.New(datatype)
-	reflect.ValueOf(&object).MethodByName("Init").Call([]reflect.Value{})
+	object := reflect.New(objectType)
+	reflect.ValueOf(&object).MethodByName("Init").Call([]reflect.Value{reflect.ValueOf(guid)})
 	ScopeObjects = append(ScopeObjects, ScopeInjectedObject{
 		Guid: guid,
 		Objects: []InjectedObject{
 			{
-				ObjectType: datatype,
-				Object:     object,
+				IntefaceType: interfaceType,
+				Object:       object,
 			},
 		},
 	})
 	return object
 }
-func GetTransiantObject[resultType any](datatype reflect.Type) any {
-	object := reflect.New(datatype)
-	reflect.ValueOf(&object).MethodByName("Init").Call([]reflect.Value{})
+func GetTransiantObject[resultType any](interfaceType reflect.Type, objectType reflect.Type) any {
+	object := reflect.New(objectType)
+	reflect.ValueOf(&object).MethodByName("Init").Call([]reflect.Value{reflect.ValueOf("")})
 	return object
 }
-func GetSinglletonObject[resultType any](datatype reflect.Type) any {
+func GetSinglletonObject[resultType any](interfaceType reflect.Type, objectType reflect.Type) any {
 	for _, item := range SingletonObjects {
-		if item.ObjectType == datatype {
+		if item.IntefaceType == interfaceType {
 			return item.Object
 		}
 	}
-	object := reflect.New(datatype)
-	reflect.ValueOf(&object).MethodByName("Init").Call([]reflect.Value{})
+	object := reflect.New(objectType)
+	reflect.ValueOf(&object).MethodByName("Init").Call([]reflect.Value{reflect.ValueOf("")})
 	return object
 }

@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="Injection And Repository Completion">
+    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="Scope Connection">
+      <change afterPath="$PROJECT_DIR$/Seller.Application/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DatabaseConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DatabaseConfig.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/InjectionConfig/InjectionConfigFunctions.go" beforeDir="false" afterPath="$PROJECT_DIR$/Config/InjectionConfig/InjectionConfigFunctions.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/InjectionConfig/InjectionConfigModels.go" beforeDir="false" afterPath="$PROJECT_DIR$/Config/InjectionConfig/InjectionConfigModels.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryPropertyRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryPropertyRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/ProductRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/ProductRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/PropertiesValueRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/PropertiesValueRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/SelectableValueRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/SelectableValueRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/UserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/UserRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IUserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IUserRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Domain/Entities/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Domain/Entities/User.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go Application" />
         <option value="Go File" />
+        <option value="Go Application" />
       </list>
     </option>
   </component>
@@ -46,20 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/DevelopSource/source/go/seller/Seller/Seller.Infrastructure/DBRepositories&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go Application",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "F:/DevelopSource/source/go/seller/Seller/Seller.Infrastructure/DBRepositories",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\DevelopSource\source\go\seller\Seller\Seller.Infrastructure\DBRepositories" />
@@ -69,7 +64,24 @@
       <recent name="F:\DevelopSource\source\go\seller\Seller\Config\InjectionConfig" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build Seller">
+    <configuration name="go build Seller" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="Seller" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Seller" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="Seller" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="Seller" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/Seller.Application/main.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Seller" />
       <working_directory value="$PROJECT_DIR$" />
@@ -81,6 +93,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build Seller" />
+        <item itemvalue="Go Build.go build main.go (1)" />
         <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
@@ -96,7 +110,8 @@
       <workItem from="1663702848819" duration="3783000" />
       <workItem from="1663783676259" duration="4404000" />
       <workItem from="1663788438304" duration="6184000" />
-      <workItem from="1663852965581" duration="14227000" />
+      <workItem from="1663852965581" duration="14443000" />
+      <workItem from="1663920082871" duration="3768000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1663703099831</created>
@@ -119,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663879160958</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Scope Connection">
+      <created>1663882580015</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663882580015</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,9 +162,26 @@
     <MESSAGE value="Initial" />
     <MESSAGE value="Entity and Repositories" />
     <MESSAGE value="Injection And Repository Completion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Injection And Repository Completion" />
+    <MESSAGE value="Scope Connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scope Connection" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Seller.Application/main.go</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Seller.Application/main.go</url>
+          <line>11</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
