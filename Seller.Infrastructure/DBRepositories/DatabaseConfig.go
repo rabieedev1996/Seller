@@ -1,4 +1,4 @@
-package Config
+package DBRepositories
 
 import (
 	"gorm.io/driver/postgres"

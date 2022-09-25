@@ -22,6 +22,6 @@ func main() {
 	}
 
 	var userRepository Presistence.IUserRepository
-	userRepository = InjectionConfig.PrepareObject[Presistence.IUserRepository](reflect.TypeOf(userRepository), "")
+	userRepository = *InjectionConfig.PrepareObject[Presistence.IUserRepository](reflect.TypeOf(userRepository), "")
 	userRepository.Create(user)
 }

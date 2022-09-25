@@ -54,34 +54,34 @@ func (list InjectionList) SearchInjectionType(datatype reflect.Type) *InjectionT
 	return nil
 }
 
-func PrepareObject[resultType any](datatype reflect.Type, guid string) resultType {
+func PrepareObject[resultType any](datatype reflect.Type, guid string) *resultType {
 
 	injectionType := injectionTypes.Scope.SearchInjectionType(datatype)
 	if injectionType != nil {
-		object := GetScopeObject(injectionType.InterfaceType, injectionType.ObjectType, guid)
-		return object
+		object := GetScopeObject[resultType](injectionType.InterfaceType, injectionType.ObjectType, guid)
+		return &object
 	}
 
 	injectionType = injectionTypes.Transient.SearchInjectionType(datatype)
 	if injectionType != nil {
-		object := GetTransiantObject(injectionType.InterfaceType, injectionType.ObjectType)
-		return object
+		object := GetTransiantObject[resultType](injectionType.InterfaceType, injectionType.ObjectType)
+		return &object
 	}
 
 	injectionType = injectionTypes.Singleton.SearchInjectionType(datatype)
 	if injectionType != nil {
-		object := GetSinglletonObject(injectionType.InterfaceType, injectionType.ObjectType)
-		return object
+		object := GetSinglletonObject[resultType](injectionType.InterfaceType, injectionType.ObjectType)
+		return &object
 	}
 	return nil
 }
 
-func GetScopeObject[resultType any](interfaceType reflect.Type, objectType reflect.Type, guid string) any {
+func GetScopeObject[resultType any](interfaceType reflect.Type, objectType reflect.Type, guid string) resultType {
 	for _, Scope := range ScopeObjects {
 		if Scope.Guid == guid {
 			for _, Object := range Scope.Objects {
 				if Object.IntefaceType == interfaceType {
-					return Object
+					return reflect.ValueOf(Object.Object).Interface().(resultType)
 				}
 			}
 			object := reflect.New(objectType)
@@ -90,7 +90,7 @@ func GetScopeObject[resultType any](interfaceType reflect.Type, objectType refle
 				IntefaceType: interfaceType,
 				Object:       object,
 			})
-			return object
+			return object.Interface().(resultType)
 		}
 	}
 	object := reflect.New(objectType)
@@ -104,20 +104,20 @@ func GetScopeObject[resultType any](interfaceType reflect.Type, objectType refle
 			},
 		},
 	})
-	return object
+	return object.Interface().(resultType)
 }
-func GetTransiantObject[resultType any](interfaceType reflect.Type, objectType reflect.Type) any {
+func GetTransiantObject[resultType any](interfaceType reflect.Type, objectType reflect.Type) resultType {
 	object := reflect.New(objectType)
 	reflect.ValueOf(&object).MethodByName("Init").Call([]reflect.Value{reflect.ValueOf("")})
-	return object
+	return object.Interface().(resultType)
 }
-func GetSinglletonObject[resultType any](interfaceType reflect.Type, objectType reflect.Type) any {
+func GetSinglletonObject[resultType any](interfaceType reflect.Type, objectType reflect.Type) resultType {
 	for _, item := range SingletonObjects {
 		if item.IntefaceType == interfaceType {
-			return item.Object
+			return reflect.ValueOf(item.Object).Interface().(resultType)
 		}
 	}
 	object := reflect.New(objectType)
 	reflect.ValueOf(&object).MethodByName("Init").Call([]reflect.Value{reflect.ValueOf("")})
-	return object
+	return object.Interface().(resultType)
 }

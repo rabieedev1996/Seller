@@ -12,7 +12,7 @@ type SelectableValueRepository struct {
 }
 
 func (r SelectableValueRepository) Init(guid string) {
-	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.SelectableValue]](reflect.TypeOf(r.Generic), guid)
+	r.Generic = *InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.SelectableValue]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r SelectableValueRepository) GetById(id int) Entities.SelectableValue {

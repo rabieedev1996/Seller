@@ -12,7 +12,7 @@ type ProductRepository struct {
 }
 
 func (r ProductRepository) Init(guid string) {
-	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.Product]](reflect.TypeOf(r.Generic), guid)
+	r.Generic = *InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.Product]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r ProductRepository) GetById(id int) Entities.Product {

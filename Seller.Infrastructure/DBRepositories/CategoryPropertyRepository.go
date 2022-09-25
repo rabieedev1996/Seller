@@ -12,7 +12,7 @@ type CategoryPropertyRepository struct {
 }
 
 func (r CategoryPropertyRepository) Init(guid string) {
-	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.CategoryProperty]](reflect.TypeOf(r.Generic), guid)
+	r.Generic = *InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.CategoryProperty]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r CategoryPropertyRepository) GetById(id int) Entities.CategoryProperty {

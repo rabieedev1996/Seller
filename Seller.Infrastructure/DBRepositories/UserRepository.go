@@ -12,7 +12,7 @@ type UserRepository struct {
 }
 
 func (r UserRepository) Init(guid string) {
-	r.Generic = InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.User]](reflect.TypeOf(r.Generic), guid)
+	r.Generic = *InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.User]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r UserRepository) GetById(id int) Entities.User {
