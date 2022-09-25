@@ -2,7 +2,7 @@ package Presistence
 
 type IGenericRepository[entity any] interface {
 	GetById(id int) entity
-	Create(entity any) entity
-	Update(entity any) bool
-	Delete(entity any) bool
+	Create(model entity) entity
+	Update(model entity, id int) bool
+	Delete(model entity) bool
 }

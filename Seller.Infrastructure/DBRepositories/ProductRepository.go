@@ -1,10 +1,8 @@
 package DBRepositories
 
 import (
-	"Seller/Config/InjectionConfig"
 	"Seller/Seller.Application/Contract/Presistence"
 	"Seller/Seller.Domain/Entities"
-	"reflect"
 )
 
 type ProductRepository struct {
@@ -12,7 +10,6 @@ type ProductRepository struct {
 }
 
 func (r ProductRepository) Init(guid string) {
-	r.Generic = *InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.Product]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r ProductRepository) GetById(id int) Entities.Product {
@@ -24,7 +21,7 @@ func (r ProductRepository) Create(model Entities.Product) Entities.Product {
 	return model
 }
 func (r ProductRepository) Update(model Entities.Product, id int) bool {
-	return r.Generic.Update(model)
+	return r.Generic.Update(model, id)
 }
 
 func (r ProductRepository) Delete(model Entities.Product) bool {

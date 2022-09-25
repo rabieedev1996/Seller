@@ -1,10 +1,8 @@
 package DBRepositories
 
 import (
-	"Seller/Config/InjectionConfig"
 	"Seller/Seller.Application/Contract/Presistence"
 	"Seller/Seller.Domain/Entities"
-	"reflect"
 )
 
 type SelectableValueRepository struct {
@@ -12,7 +10,6 @@ type SelectableValueRepository struct {
 }
 
 func (r SelectableValueRepository) Init(guid string) {
-	r.Generic = *InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.SelectableValue]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r SelectableValueRepository) GetById(id int) Entities.SelectableValue {
@@ -24,7 +21,7 @@ func (r SelectableValueRepository) Create(model Entities.SelectableValue) Entiti
 	return model
 }
 func (r SelectableValueRepository) Update(model Entities.SelectableValue, id int) bool {
-	return r.Generic.Update(model)
+	return r.Generic.Update(model, id)
 }
 
 func (r SelectableValueRepository) Delete(model Entities.SelectableValue) bool {

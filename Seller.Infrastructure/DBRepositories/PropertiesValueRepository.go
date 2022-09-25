@@ -1,10 +1,8 @@
 package DBRepositories
 
 import (
-	"Seller/Config/InjectionConfig"
 	"Seller/Seller.Application/Contract/Presistence"
 	"Seller/Seller.Domain/Entities"
-	"reflect"
 )
 
 type PropertiesValueRepository struct {
@@ -12,7 +10,6 @@ type PropertiesValueRepository struct {
 }
 
 func (r PropertiesValueRepository) Init(guid string) {
-	r.Generic = *InjectionConfig.PrepareObject[Presistence.IGenericRepository[Entities.PropertiesValue]](reflect.TypeOf(r.Generic), guid)
 }
 
 func (r PropertiesValueRepository) GetById(id int) Entities.PropertiesValue {
@@ -24,7 +21,7 @@ func (r PropertiesValueRepository) Create(model Entities.PropertiesValue) Entiti
 	return model
 }
 func (r PropertiesValueRepository) Update(model Entities.PropertiesValue, id int) bool {
-	return r.Generic.Update(model)
+	return r.Generic.Update(model, id)
 }
 
 func (r PropertiesValueRepository) Delete(model Entities.PropertiesValue) bool {

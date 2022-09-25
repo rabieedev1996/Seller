@@ -1,14 +1,15 @@
 package main
 
 import (
-	"Seller/Config/InjectionConfig"
+	"Seller/Config"
 	"Seller/Seller.Application/Contract/Presistence"
 	"Seller/Seller.Domain/Entities"
-	"reflect"
+	"Seller/Seller.Infrastructure/DBRepositories"
 	"time"
 )
 
 func main() {
+
 	user := Entities.User{
 		Id:                "1111",
 		First_Name:        "Test",
@@ -21,7 +22,12 @@ func main() {
 		Jalali_Created_At: 14011003,
 	}
 
-	var userRepository Presistence.IUserRepository
-	userRepository = *InjectionConfig.PrepareObject[Presistence.IUserRepository](reflect.TypeOf(userRepository), "")
-	userRepository.Create(user)
+	var iGenericRepository Presistence.IGenericRepository[Entities.User] = DBRepositories.GenericRepository[Entities.User]{
+		Context: Config.GetDatabaseConnection(),
+	}
+	var iUserRepository = DBRepositories.UserRepository{
+		Generic: iGenericRepository,
+	}
+
+	iUserRepository.Create(user)
 }
