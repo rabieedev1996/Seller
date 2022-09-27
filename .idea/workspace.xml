@@ -4,21 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommand.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommandHandler.go" afterDir="false" />
+    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="sync">
+      <change afterPath="$PROJECT_DIR$/Seller.Api/Controllers/AccountController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Common/ApiResponseUtility.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Common/JWTTokenUtilities.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Common/Utilities.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Contract/Infrastructure/ISMSService.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Model/JWTModels.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Domain/ServiceModel/FarazSms.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Infrastructure/Service/SMSService.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/InjectionConfig/InjectionConfigFunctions.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/InjectionConfig/InjectionConfigModels.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommand.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommand.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommandHandler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IGenericRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IGenericRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IUserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IUserRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Domain/Entities/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Domain/Entities/User.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryPropertyRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryPropertyRepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/DatabaseConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DatabaseConfig.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/ProductRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/ProductRepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/PropertiesValueRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/PropertiesValueRepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/SelectableValueRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/SelectableValueRepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/UserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/UserRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,6 +145,10 @@
       <workItem from="1663951585115" duration="207000" />
       <workItem from="1663951853256" duration="7376000" />
       <workItem from="1664112007023" duration="9323000" />
+      <workItem from="1664138581493" duration="1093000" />
+      <workItem from="1664214343063" duration="6589000" />
+      <workItem from="1664265204403" duration="6419000" />
+      <workItem from="1664289781740" duration="9199000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1663703099831</created>
@@ -180,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664113500896</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="sync">
+      <created>1664138599427</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664138599427</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +223,8 @@
     <MESSAGE value="Scope Connection" />
     <MESSAGE value="Injection Completion" />
     <MESSAGE value="Problem On Injection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Problem On Injection" />
+    <MESSAGE value="sync" />
+    <option name="LAST_COMMIT_MESSAGE" value="sync" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
@@ -214,8 +234,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/main.go</url>
-          <line>24</line>
+          <line>35</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Seller.Infrastructure/Service/SMSService.go</url>
+          <line>17</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

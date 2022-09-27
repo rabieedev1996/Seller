@@ -16,14 +16,14 @@ func (r CategoryRepository) GetById(id int) Entities.Category {
 	return r.Generic.GetById(id)
 }
 
-func (r CategoryRepository) Create(model Entities.Category) Entities.Category {
+func (r CategoryRepository) Create(model *Entities.Category) *Entities.Category {
 	r.Generic.Create(model)
 	return model
 }
-func (r CategoryRepository) Update(model Entities.Category, id int) bool {
+func (r CategoryRepository) Update(model *Entities.Category, id int) bool {
 	return r.Generic.Update(model, id)
 }
 
-func (r CategoryRepository) Delete(model Entities.Category) bool {
+func (r CategoryRepository) Delete(model *Entities.Category) bool {
 	return r.Generic.Delete(model)
 }

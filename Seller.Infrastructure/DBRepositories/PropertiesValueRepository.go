@@ -16,14 +16,14 @@ func (r PropertiesValueRepository) GetById(id int) Entities.PropertiesValue {
 	return r.Generic.GetById(id)
 }
 
-func (r PropertiesValueRepository) Create(model Entities.PropertiesValue) Entities.PropertiesValue {
+func (r PropertiesValueRepository) Create(model *Entities.PropertiesValue) *Entities.PropertiesValue {
 	r.Generic.Create(model)
 	return model
 }
-func (r PropertiesValueRepository) Update(model Entities.PropertiesValue, id int) bool {
+func (r PropertiesValueRepository) Update(model *Entities.PropertiesValue, id int) bool {
 	return r.Generic.Update(model, id)
 }
 
-func (r PropertiesValueRepository) Delete(model Entities.PropertiesValue) bool {
+func (r PropertiesValueRepository) Delete(model *Entities.PropertiesValue) bool {
 	return r.Generic.Delete(model)
 }

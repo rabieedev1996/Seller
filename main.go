@@ -2,32 +2,35 @@ package main
 
 import (
 	"Seller/Config"
+	Controller "Seller/Seller.Api/Controllers"
+	"Seller/Seller.Application/Contract/Infrastructure"
 	"Seller/Seller.Application/Contract/Presistence"
 	"Seller/Seller.Domain/Entities"
 	"Seller/Seller.Infrastructure/DBRepositories"
-	"time"
+	"Seller/Seller.Infrastructure/Service"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
 
-	user := Entities.User{
-		Id:                "1111",
-		First_Name:        "Test",
-		Last_Name:         "Testi",
-		Phone_Number:      9128003185,
-		Activation_Code:   111,
-		Username:          "test",
-		Email:             "mrabiee1375@gmail.com",
-		Created_At:        time.Now(),
-		Jalali_Created_At: 14011003,
+	db := Config.GetDatabaseConnection()
+
+	var iSMSService Infrastructure.ISMSService
+	iSMSService = Service.FarazSMSService{}
+
+	var userGenericRepository DBRepositories.GenericRepository[Entities.User]
+	userGenericRepository = DBRepositories.GenericRepository[Entities.User]{
+		Context: db,
+	}
+	var iUserRepository Presistence.IUserRepository
+	iUserRepository = DBRepositories.UserRepository{
+		Generic: userGenericRepository,
 	}
 
-	var iGenericRepository Presistence.IGenericRepository[Entities.User] = DBRepositories.GenericRepository[Entities.User]{
-		Context: Config.GetDatabaseConnection(),
-	}
-	var iUserRepository = DBRepositories.UserRepository{
-		Generic: iGenericRepository,
-	}
-
-	iUserRepository.Create(user)
+	r := gin.Default()
+	Controller.AccountController{
+		IUserRepository: iUserRepository,
+		SmsService:      iSMSService,
+	}.RegisterUser(r)
+	r.Run()
 }

@@ -13,4 +13,5 @@ type User struct {
 	Email             string
 	Created_At        time.Time
 	Jalali_Created_At int
+	Is_Active         bool
 }

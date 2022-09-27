@@ -1,6 +1,6 @@
 package Register
 
 type RegisterCommand struct {
-	PhoneNumber string
-	Password    string
+	PhoneNumber int64  `json:"PhoneNumber"`
+	Password    string `json:"Password"`
 }
