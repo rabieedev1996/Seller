@@ -13,6 +13,12 @@ type AccountController struct {
 	SmsService      Infrastructure.ISMSService
 }
 
+// @Summary Register an User
+// @Tags Register
+// @Success 200 {object} Common.ResponseModel[string]
+// @Param register body Register.RegisterCommand true "RegisterData"
+// @Router /Register [post]
+// @Security bearer
 func (controller AccountController) RegisterUser(engine *gin.Engine) {
 	engine.POST("/Register", func(c *gin.Context) {
 

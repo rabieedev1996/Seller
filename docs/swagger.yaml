@@ -1,0 +1,46 @@
+definitions:
+  Common.ResponseModel-string:
+    properties:
+      data:
+        type: string
+      message:
+        type: string
+      statusCode:
+        type: integer
+    type: object
+  Register.RegisterCommand:
+    properties:
+      Password:
+        type: string
+      PhoneNumber:
+        type: integer
+    type: object
+info:
+  contact: {}
+  version: 1.0.0// @host localhost:8080
+paths:
+  /Register:
+    post:
+      parameters:
+      - description: RegisterData
+        in: body
+        name: register
+        required: true
+        schema:
+          $ref: '#/definitions/Register.RegisterCommand'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Common.ResponseModel-string'
+      security:
+      - bearer: []
+      summary: Register an User
+      tags:
+      - Register
+securityDefinitions:
+  bearer:
+    in: header
+    name: jwt token
+    type: apiKey
+swagger: "2.0"

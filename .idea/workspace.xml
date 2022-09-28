@@ -4,28 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="sync">
-      <change afterPath="$PROJECT_DIR$/Seller.Api/Controllers/AccountController.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Common/ApiResponseUtility.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Common/JWTTokenUtilities.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Common/Utilities.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Contract/Infrastructure/ISMSService.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Model/JWTModels.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Domain/ServiceModel/FarazSms.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Infrastructure/Service/SMSService.go" afterDir="false" />
+    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="Register Service">
+      <change afterPath="$PROJECT_DIR$/docs/docs.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/swagger.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/swagger.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommand.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommand.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommandHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IGenericRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IGenericRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IUserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IUserRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Domain/Entities/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Domain/Entities/User.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryPropertyRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryPropertyRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/ProductRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/ProductRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/PropertiesValueRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/PropertiesValueRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/SelectableValueRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/SelectableValueRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/UserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/UserRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Api/Controllers/AccountController.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Api/Controllers/AccountController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
@@ -45,6 +29,7 @@
   <component name="GOROOT" url="file://C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/main.go" root0="FORCE_HIGHLIGHTING" />
@@ -58,20 +43,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Learning/Go/go-clean-arch-master&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "configurable..is.expanded": "false",
+    "configurable.GoLibrariesConfigurable.is.expanded": "true",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "F:/Learning/Go/go-clean-arch-master",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "http.proxy"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\DevelopSource\source\go\seller\Seller\Seller.Infrastructure\DBRepositories" />
@@ -120,6 +111,22 @@
       <filePath value="$PROJECT_DIR$/Seller.Api/main.go" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="SwaggerCodegen">
+      <option name="activeConfigurationType" value="FILE" />
+      <option name="configurationPath" value="" />
+      <option name="customJreEnabled" value="false" />
+      <option name="customTemplatesPath" value="" />
+      <option name="enableDebugLogging" value="false" />
+      <option name="generateToPath" value="F:\Learning\Go\seller\Seller\gen" />
+      <option name="generationParameters">
+        <list />
+      </option>
+      <option name="generatorPath" value="https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0/openapi-generator-cli-5.0.0.jar" />
+      <option name="jdkPath" value="" />
+      <option name="language" value="java" />
+      <option name="specificationPath" value="F:\Learning\Go\seller\Seller\docs\swagger.yaml" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build Seller" />
@@ -148,7 +155,14 @@
       <workItem from="1664138581493" duration="1093000" />
       <workItem from="1664214343063" duration="6589000" />
       <workItem from="1664265204403" duration="6419000" />
-      <workItem from="1664289781740" duration="9199000" />
+      <workItem from="1664289781740" duration="11632000" />
+      <workItem from="1664314052399" duration="399000" />
+      <workItem from="1664314472995" duration="461000" />
+      <workItem from="1664314951464" duration="251000" />
+      <workItem from="1664315270603" duration="98000" />
+      <workItem from="1664315808119" duration="500000" />
+      <workItem from="1664390098810" duration="114000" />
+      <workItem from="1664390220299" duration="7454000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1663703099831</created>
@@ -199,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664138599427</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Register Service">
+      <created>1664311622012</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664311622012</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +245,8 @@
     <MESSAGE value="Injection Completion" />
     <MESSAGE value="Problem On Injection" />
     <MESSAGE value="sync" />
-    <option name="LAST_COMMIT_MESSAGE" value="sync" />
+    <MESSAGE value="Register Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Register Service" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
@@ -233,16 +255,15 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/main.go</url>
-          <line>35</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Seller.Infrastructure/Service/SMSService.go</url>
           <line>17</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
