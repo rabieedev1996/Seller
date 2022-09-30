@@ -6,6 +6,11 @@ type ResponseModel[data any] struct {
 	Data       data
 }
 
+const (
+	SUCCESS = iota
+	INVALID_ACTIVATION_CODE
+)
+
 func (model ResponseModel[data]) ApiResponse(resultData data, statusCode int) ResponseModel[data] {
 	return ResponseModel[data]{
 		Data:       resultData,
@@ -15,8 +20,10 @@ func (model ResponseModel[data]) ApiResponse(resultData data, statusCode int) Re
 }
 func getErrorText(id int) string {
 	switch id {
-	case 0:
+	case SUCCESS:
 		return "عملیات با موفقیت انجام شد."
+	case INVALID_ACTIVATION_CODE:
+		return "کد فعالسازی وارد شده صحیح نیست."
 	default:
 		return "خطایی روی داده است."
 	}

@@ -1,4 +1,18 @@
 definitions:
+  ActivationByCode.ActivationByCodeCommand:
+    properties:
+      activationCode:
+        type: integer
+    type: object
+  Common.ResponseModel-GetCategories_GetCategoriesVm:
+    properties:
+      data:
+        $ref: '#/definitions/GetCategories.GetCategoriesVm'
+      message:
+        type: string
+      statusCode:
+        type: integer
+    type: object
   Common.ResponseModel-string:
     properties:
       data:
@@ -7,6 +21,24 @@ definitions:
         type: string
       statusCode:
         type: integer
+    type: object
+  ForgetPassword.ForgetPasswordCommand:
+    properties:
+      phoneNumber:
+        type: integer
+    type: object
+  GetCategories.GetCategoriesVm:
+    properties:
+      id:
+        type: integer
+      likeCount:
+        type: integer
+      parentCatId:
+        type: integer
+      summary:
+        type: string
+      title:
+        type: string
     type: object
   Register.RegisterCommand:
     properties:
@@ -19,7 +51,45 @@ info:
   contact: {}
   version: 1.0.0// @host localhost:8080
 paths:
-  /Register:
+  /Account/ActivateUser:
+    post:
+      parameters:
+      - description: ActivationData
+        in: body
+        name: ActivateUser
+        required: true
+        schema:
+          $ref: '#/definitions/ActivationByCode.ActivationByCodeCommand'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Common.ResponseModel-string'
+      security:
+      - bearer: []
+      summary: Activate User by Code
+      tags:
+      - Account
+  /Account/ForgetPassword:
+    post:
+      parameters:
+      - description: ForgetPassword
+        in: body
+        name: ForgetPassword
+        required: true
+        schema:
+          $ref: '#/definitions/ForgetPassword.ForgetPasswordCommand'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Common.ResponseModel-string'
+      security:
+      - bearer: []
+      summary: Register an User
+      tags:
+      - Account
+  /Account/Register:
     post:
       parameters:
       - description: RegisterData
@@ -37,10 +107,27 @@ paths:
       - bearer: []
       summary: Register an User
       tags:
-      - Register
+      - Account
+  /Categories/GetCategories:
+    get:
+      parameters:
+      - description: Parent Id
+        in: query
+        name: parentId
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Common.ResponseModel-GetCategories_GetCategoriesVm'
+      security:
+      - bearer: []
+      summary: Register an User
+      tags:
+      - Account
 securityDefinitions:
   bearer:
     in: header
-    name: jwt token
+    name: Authorization
     type: apiKey
 swagger: "2.0"

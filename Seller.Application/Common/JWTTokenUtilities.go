@@ -3,8 +3,10 @@ package Common
 import (
 	"Seller/Seller.Application/Model"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/google/uuid"
+	"strings"
 	"time"
 )
 
@@ -52,4 +54,13 @@ func GetClaimsFromToken(tokenString string) (jwt.MapClaims, error) {
 		return claims, nil
 	}
 	return nil, err
+}
+
+func GetClaimValuesFromGin(c *gin.Context) Model.TokenUserInfo {
+	token := c.GetHeader("Authorization")
+	Claims, _ := GetClaimsFromToken(strings.ReplaceAll(strings.ReplaceAll(token, "bearer ", ""), "Bearer ", ""))
+	return Model.TokenUserInfo{
+		UserId:  Claims["UserId"].(string),
+		TokenId: Claims["TokenId"].(string),
+	}
 }

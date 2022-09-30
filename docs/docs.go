@@ -16,7 +16,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/Register": {
+        "/Account/ActivateUser": {
             "post": {
                 "security": [
                     {
@@ -24,7 +24,71 @@ const docTemplate = `{
                     }
                 ],
                 "tags": [
-                    "Register"
+                    "Account"
+                ],
+                "summary": "Activate User by Code",
+                "parameters": [
+                    {
+                        "description": "ActivationData",
+                        "name": "ActivateUser",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ActivationByCode.ActivationByCodeCommand"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Common.ResponseModel-string"
+                        }
+                    }
+                }
+            }
+        },
+        "/Account/ForgetPassword": {
+            "post": {
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Register an User",
+                "parameters": [
+                    {
+                        "description": "ForgetPassword",
+                        "name": "ForgetPassword",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ForgetPassword.ForgetPasswordCommand"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Common.ResponseModel-string"
+                        }
+                    }
+                }
+            }
+        },
+        "/Account/Register": {
+            "post": {
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": [
+                    "Account"
                 ],
                 "summary": "Register an User",
                 "parameters": [
@@ -47,9 +111,60 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/Categories/GetCategories": {
+            "get": {
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Register an User",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Parent Id",
+                        "name": "parentId",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Common.ResponseModel-GetCategories_GetCategoriesVm"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
+        "ActivationByCode.ActivationByCodeCommand": {
+            "type": "object",
+            "properties": {
+                "activationCode": {
+                    "type": "integer"
+                }
+            }
+        },
+        "Common.ResponseModel-GetCategories_GetCategoriesVm": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/GetCategories.GetCategoriesVm"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "statusCode": {
+                    "type": "integer"
+                }
+            }
+        },
         "Common.ResponseModel-string": {
             "type": "object",
             "properties": {
@@ -61,6 +176,34 @@ const docTemplate = `{
                 },
                 "statusCode": {
                     "type": "integer"
+                }
+            }
+        },
+        "ForgetPassword.ForgetPasswordCommand": {
+            "type": "object",
+            "properties": {
+                "phoneNumber": {
+                    "type": "integer"
+                }
+            }
+        },
+        "GetCategories.GetCategoriesVm": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "likeCount": {
+                    "type": "integer"
+                },
+                "parentCatId": {
+                    "type": "integer"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
                 }
             }
         },
@@ -79,7 +222,7 @@ const docTemplate = `{
     "securityDefinitions": {
         "bearer": {
             "type": "apiKey",
-            "name": "jwt token",
+            "name": "Authorization",
             "in": "header"
         }
     }

@@ -11,4 +11,5 @@ type Category struct {
 	Selectable_Prop   string
 	Created_At        time.Time
 	Jalali_Created_At int
+	Is_Deleted        bool
 }

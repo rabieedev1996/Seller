@@ -35,12 +35,30 @@ func main() {
 		Generic: userGenericRepository,
 	}
 
+	var categoryGenericRepository DBRepositories.GenericRepository[Entities.Category]
+	categoryGenericRepository = DBRepositories.GenericRepository[Entities.Category]{
+		Context: db,
+	}
+	var iCategoryRepository Presistence.ICategoryRepository
+	iCategoryRepository = DBRepositories.CategoryRepository{
+		Generic: categoryGenericRepository,
+	}
+
 	r := gin.Default()
 
-	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	accountGroup := r.Group("/Account")
+	categoriesGroup := r.Group("/Categories")
 	Controller.AccountController{
 		IUserRepository: iUserRepository,
 		SmsService:      iSMSService,
-	}.RegisterUser(r)
+		Engine:          accountGroup,
+	}.RegisterUser().ForgetPassword().ActivateUser()
+
+	Controller.CategoryController{
+		ICategoryRepository: iCategoryRepository,
+		Engine:              categoriesGroup,
+	}.GetCategories()
+
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.Run()
 }

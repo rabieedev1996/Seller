@@ -43,8 +43,8 @@ func (handler RegisterCommandHandler) CommandHandler(command RegisterCommand) Co
 	}
 	handler.SmsService.SendVerificationCode("0"+strconv.FormatInt(user.Phone_Number, 10), strconv.Itoa(user.Activation_Code))
 
-	tokenExp := time.Now().AddDate(1, 0, 0)
+	tokenExp := time.Now().Add(2 * time.Minute)
 	token, _ := Common.GenerateToken(user.Id, tokenExp)
 
-	return (Common.ResponseModel[string]{}).ApiResponse(token, 0)
+	return (Common.ResponseModel[string]{}).ApiResponse(token, Common.SUCCESS)
 }
