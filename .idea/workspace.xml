@@ -4,33 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="Add Swagger to Project">
-      <change afterPath="$PROJECT_DIR$/Seller.Api/Controllers/CategoryController.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Api/Middlewares/Authorize.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategories/GetCategoriesQuery.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategories/GetCategoriesQueryHandler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategories/GetCategoriesVM.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ActivationByCode/ActivationByCodeCommand.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ActivationByCode/ActivationByCodeCommandHandler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ForgetPassword/ForgetPasswordCommand.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ForgetPassword/ForgetPasswordCommandHandler.go" afterDir="false" />
+    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="GetCategories Service">
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategoryProducts/GetCategoryProductsQuery.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategoryProducts/GetCategoryProductsQueryHandler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategoryProducts/GetCategoryProductsVM.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Api/Controllers/AccountController.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Api/Controllers/AccountController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Common/ApiResponseUtility.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Common/ApiResponseUtility.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Common/JWTTokenUtilities.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Common/JWTTokenUtilities.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommand.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/Register/RegisterCommand.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Features/Account/Commands/Register/RegisterCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/Register/RegisterCommandHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Api/Controllers/CategoryController.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Api/Controllers/CategoryController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/ICategoryRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/ICategoryRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IGenericRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IGenericRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IUserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IUserRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Domain/Entities/Category.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Domain/Entities/Category.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/UserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/UserRepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/docs/docs.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,28 +47,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;configurable..is.expanded&quot;: &quot;false&quot;,
-    &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Learning/Go/seller/Seller/Seller.Application/Features/Account/Commands&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "configurable..is.expanded": "false",
+    "configurable.GoLibrariesConfigurable.is.expanded": "true",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "F:/Learning/Go/seller/Seller/Seller.Application/Features/Account/Category/Queries",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "http.proxy"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Features\Account\Category\Queries" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Features\Account\Commands" />
       <recent name="F:\DevelopSource\source\go\seller\Seller\Seller.Infrastructure\DBRepositories" />
     </key>
@@ -187,7 +172,8 @@
       <workItem from="1664436439653" duration="7218000" />
       <workItem from="1664455778182" duration="7852000" />
       <workItem from="1664480989209" duration="3543000" />
-      <workItem from="1664563562123" duration="6033000" />
+      <workItem from="1664563562123" duration="6337000" />
+      <workItem from="1664647741881" duration="3642000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1663703099831</created>
@@ -252,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664398910373</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="GetCategories Service">
+      <created>1664570666283</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664570666283</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +272,8 @@
     <MESSAGE value="sync" />
     <MESSAGE value="Register Service" />
     <MESSAGE value="Add Swagger to Project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Swagger to Project" />
+    <MESSAGE value="GetCategories Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="GetCategories Service" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
@@ -321,6 +315,16 @@
           <url>file://$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/GenericRepository.go</url>
           <line>25</line>
           <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategoryProducts/GetCategoryProductsQueryHandler.go</url>
+          <line>14</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go</url>
+          <line>41</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

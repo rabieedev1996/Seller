@@ -120,9 +120,9 @@ const docTemplate = `{
                     }
                 ],
                 "tags": [
-                    "Account"
+                    "Categories"
                 ],
-                "summary": "Register an User",
+                "summary": "Get Categories List",
                 "parameters": [
                     {
                         "type": "integer",
@@ -135,7 +135,39 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Common.ResponseModel-GetCategories_GetCategoriesVm"
+                            "$ref": "#/definitions/Common.ResponseModel-array_GetCategories_GetCategoriesVm"
+                        }
+                    }
+                }
+            }
+        },
+        "/Categories/GetCategoryProducts": {
+            "post": {
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Get Category Products",
+                "parameters": [
+                    {
+                        "description": "GetCategoryProduct",
+                        "name": "GetCategoryProduct",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GetCategoryProducts.GetCategoryProductsQuery"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Common.ResponseModel-array_GetCategories_GetCategoriesVm"
                         }
                     }
                 }
@@ -151,11 +183,14 @@ const docTemplate = `{
                 }
             }
         },
-        "Common.ResponseModel-GetCategories_GetCategoriesVm": {
+        "Common.ResponseModel-array_GetCategories_GetCategoriesVm": {
             "type": "object",
             "properties": {
                 "data": {
-                    "$ref": "#/definitions/GetCategories.GetCategoriesVm"
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GetCategories.GetCategoriesVm"
+                    }
                 },
                 "message": {
                     "type": "string"
@@ -204,6 +239,23 @@ const docTemplate = `{
                 },
                 "title": {
                     "type": "string"
+                }
+            }
+        },
+        "GetCategoryProducts.GetCategoryProductsQuery": {
+            "type": "object",
+            "properties": {
+                "categoryId": {
+                    "type": "integer"
+                },
+                "count": {
+                    "type": "integer"
+                },
+                "sortType": {
+                    "type": "string"
+                },
+                "start": {
+                    "type": "integer"
                 }
             }
         },

@@ -11,4 +11,5 @@ type ICategoryRepository interface {
 	Update(entity *Entities.Category, id any) bool
 	Delete(entity *Entities.Category) bool
 	GetCategoryChildsRecursive(id int) []Entities.Category
+	GetCategoryProducts(categoryId int, start int, count int, sortType string) []Entities.Product
 }

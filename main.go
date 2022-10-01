@@ -57,7 +57,7 @@ func main() {
 	Controller.CategoryController{
 		ICategoryRepository: iCategoryRepository,
 		Engine:              categoriesGroup,
-	}.GetCategories()
+	}.GetCategories().GetCategoryProducts()
 
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.Run()

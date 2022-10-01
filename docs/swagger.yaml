@@ -4,10 +4,12 @@ definitions:
       activationCode:
         type: integer
     type: object
-  Common.ResponseModel-GetCategories_GetCategoriesVm:
+  Common.ResponseModel-array_GetCategories_GetCategoriesVm:
     properties:
       data:
-        $ref: '#/definitions/GetCategories.GetCategoriesVm'
+        items:
+          $ref: '#/definitions/GetCategories.GetCategoriesVm'
+        type: array
       message:
         type: string
       statusCode:
@@ -39,6 +41,17 @@ definitions:
         type: string
       title:
         type: string
+    type: object
+  GetCategoryProducts.GetCategoryProductsQuery:
+    properties:
+      categoryId:
+        type: integer
+      count:
+        type: integer
+      sortType:
+        type: string
+      start:
+        type: integer
     type: object
   Register.RegisterCommand:
     properties:
@@ -119,12 +132,31 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/Common.ResponseModel-GetCategories_GetCategoriesVm'
+            $ref: '#/definitions/Common.ResponseModel-array_GetCategories_GetCategoriesVm'
       security:
       - bearer: []
-      summary: Register an User
+      summary: Get Categories List
       tags:
-      - Account
+      - Categories
+  /Categories/GetCategoryProducts:
+    post:
+      parameters:
+      - description: GetCategoryProduct
+        in: body
+        name: GetCategoryProduct
+        required: true
+        schema:
+          $ref: '#/definitions/GetCategoryProducts.GetCategoryProductsQuery'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Common.ResponseModel-array_GetCategories_GetCategoriesVm'
+      security:
+      - bearer: []
+      summary: Get Category Products
+      tags:
+      - Categories
 securityDefinitions:
   bearer:
     in: header

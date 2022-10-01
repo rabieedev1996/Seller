@@ -37,3 +37,9 @@ func (r CategoryRepository) GetCategoryChildsRecursive(id int) []Entities.Catego
 	r.Generic.GetContext().Raw("select * from \"Category\" where \"id\" =any(public.getCategoryChildsRecursive(" + strconv.Itoa(id) + "))").Scan(&result)
 	return result
 }
+
+func (r CategoryRepository) GetCategoryProducts(categoryId int, start int, count int, sortType string) []Entities.Product {
+	var result []Entities.Product
+	r.Generic.GetContext().Raw("select * from GetCategoryProducts(" + strconv.Itoa(categoryId) + "," + strconv.Itoa(start) + "," + strconv.Itoa(count) + ",'" + sortType + "')").Scan(&result)
+	return result
+}
