@@ -4,6 +4,15 @@ definitions:
       activationCode:
         type: integer
     type: object
+  Common.ResponseModel-GetProductDetail_GetProductQueryVM:
+    properties:
+      data:
+        $ref: '#/definitions/GetProductDetail.GetProductQueryVM'
+      message:
+        type: string
+      statusCode:
+        type: integer
+    type: object
   Common.ResponseModel-array_GetCategories_GetCategoriesVm:
     properties:
       data:
@@ -52,6 +61,58 @@ definitions:
         type: string
       start:
         type: integer
+    type: object
+  GetProductDetail.GetProductQueryVM:
+    properties:
+      categoryId:
+        type: integer
+      existCount:
+        type: integer
+      id:
+        type: integer
+      likeCount:
+        type: integer
+      maxPrice:
+        type: integer
+      minPrice:
+        type: integer
+      properties:
+        items:
+          $ref: '#/definitions/GetProductDetail.ProductPropertiesVM'
+        type: array
+      rankNumber:
+        type: number
+      selectables:
+        $ref: '#/definitions/GetProductDetail.ProductSelectablesVM'
+      summary:
+        type: string
+      title:
+        type: string
+    type: object
+  GetProductDetail.ProductPropertiesVM:
+    properties:
+      propertyValue:
+        type: string
+      title:
+        type: string
+    type: object
+  GetProductDetail.ProductSelectablesVM:
+    properties:
+      title:
+        type: string
+      values:
+        items:
+          $ref: '#/definitions/GetProductDetail.ProductSelectablesValuesVM'
+        type: array
+    type: object
+  GetProductDetail.ProductSelectablesValuesVM:
+    properties:
+      existCount:
+        type: integer
+      valueKey:
+        type: string
+      valueTitle:
+        type: string
     type: object
   Register.RegisterCommand:
     properties:
@@ -157,6 +218,24 @@ paths:
       summary: Get Category Products
       tags:
       - Categories
+  /Products/GetProductDetail:
+    get:
+      parameters:
+      - description: productId
+        in: query
+        name: productId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Common.ResponseModel-GetProductDetail_GetProductQueryVM'
+      security:
+      - bearer: []
+      summary: Get Product Detail
+      tags:
+      - Products
 securityDefinitions:
   bearer:
     in: header

@@ -5,7 +5,7 @@ import (
 )
 
 type ICategoryRepository interface {
-	GetById(id string) Entities.Category
+	GetById(id int) Entities.Category
 	GetAll() []Entities.Category
 	Create(entity *Entities.Category) *Entities.Category
 	Update(entity *Entities.Category, id any) bool

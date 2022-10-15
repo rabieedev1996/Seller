@@ -13,4 +13,5 @@ type Product struct {
 	RankNumber        float32
 	Created_At        time.Time
 	Jalali_Created_At int
+	Is_Deleted        bool
 }

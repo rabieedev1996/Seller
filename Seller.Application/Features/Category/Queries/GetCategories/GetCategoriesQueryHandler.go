@@ -11,10 +11,10 @@ type GetCategoriesQueryHandler struct {
 	ICategoryRepository Presistence.ICategoryRepository
 }
 
-func (handler GetCategoriesQueryHandler) CommandHandler(command GetCategoriesQuery) Common.ResponseModel[[]GetCategoriesVm] {
+func (handler GetCategoriesQueryHandler) HandlerFunc(query GetCategoriesQuery) Common.ResponseModel[[]GetCategoriesVm] {
 	var categories []Entities.Category
-	if command.ParentId != 0 {
-		categories = handler.ICategoryRepository.GetCategoryChildsRecursive(command.ParentId)
+	if query.ParentId != 0 {
+		categories = handler.ICategoryRepository.GetCategoryChildsRecursive(query.ParentId)
 	} else {
 		categories = handler.ICategoryRepository.GetAll()
 	}

@@ -172,6 +172,36 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/Products/GetProductDetail": {
+            "get": {
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Get Product Detail",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "productId",
+                        "name": "productId",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Common.ResponseModel-GetProductDetail_GetProductQueryVM"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -179,6 +209,20 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "activationCode": {
+                    "type": "integer"
+                }
+            }
+        },
+        "Common.ResponseModel-GetProductDetail_GetProductQueryVM": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/GetProductDetail.GetProductQueryVM"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "statusCode": {
                     "type": "integer"
                 }
             }
@@ -256,6 +300,86 @@ const docTemplate = `{
                 },
                 "start": {
                     "type": "integer"
+                }
+            }
+        },
+        "GetProductDetail.GetProductQueryVM": {
+            "type": "object",
+            "properties": {
+                "categoryId": {
+                    "type": "integer"
+                },
+                "existCount": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "likeCount": {
+                    "type": "integer"
+                },
+                "maxPrice": {
+                    "type": "integer"
+                },
+                "minPrice": {
+                    "type": "integer"
+                },
+                "properties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GetProductDetail.ProductPropertiesVM"
+                    }
+                },
+                "rankNumber": {
+                    "type": "number"
+                },
+                "selectables": {
+                    "$ref": "#/definitions/GetProductDetail.ProductSelectablesVM"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "GetProductDetail.ProductPropertiesVM": {
+            "type": "object",
+            "properties": {
+                "propertyValue": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "GetProductDetail.ProductSelectablesVM": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GetProductDetail.ProductSelectablesValuesVM"
+                    }
+                }
+            }
+        },
+        "GetProductDetail.ProductSelectablesValuesVM": {
+            "type": "object",
+            "properties": {
+                "existCount": {
+                    "type": "integer"
+                },
+                "valueKey": {
+                    "type": "string"
+                },
+                "valueTitle": {
+                    "type": "string"
                 }
             }
         },

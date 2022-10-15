@@ -11,9 +11,16 @@ type GetCategoryProductsHandler struct {
 	ICategoryRepository Presistence.ICategoryRepository
 }
 
-func (handler GetCategoryProductsHandler) CommandHandler(command GetCategoryProductsQuery) Common.ResponseModel[[]GetCategoryProductsVm] {
+func (handler GetCategoryProductsHandler) CommandHandler(query GetCategoryProductsQuery) Common.ResponseModel[[]GetCategoryProductsVm] {
+	if query.Count == 0 {
+		query.Count = 10
+	}
+	if query.SortType == "" {
+		query.SortType = "dateDesc"
+	}
+
 	var categories []Entities.Product
-	categories = handler.ICategoryRepository.GetCategoryProducts(command.CategoryId, command.Start, command.Count, command.SortType)
+	categories = handler.ICategoryRepository.GetCategoryProducts(query.CategoryId, query.Start, query.Count, query.SortType)
 
 	resultData := []GetCategoryProductsVm{}
 	for _, item := range categories {

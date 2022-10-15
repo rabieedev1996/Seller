@@ -1,13 +1,7 @@
 package main
 
 import (
-	"Seller/Config"
-	Controller "Seller/Seller.Api/Controllers"
-	"Seller/Seller.Application/Contract/Infrastructure"
-	"Seller/Seller.Application/Contract/Presistence"
-	"Seller/Seller.Domain/Entities"
-	"Seller/Seller.Infrastructure/DBRepositories"
-	"Seller/Seller.Infrastructure/Service"
+	GinHandler "Seller/Seller.Api/GinHandlers"
 	_ "Seller/docs"
 	"github.com/gin-gonic/gin"
 	"github.com/swaggo/files"
@@ -21,43 +15,23 @@ import (
 // @name Authorization
 func main() {
 
-	db := Config.GetDatabaseConnection()
-
-	var iSMSService Infrastructure.ISMSService
-	iSMSService = Service.FarazSMSService{}
-
-	var userGenericRepository DBRepositories.GenericRepository[Entities.User]
-	userGenericRepository = DBRepositories.GenericRepository[Entities.User]{
-		Context: db,
-	}
-	var iUserRepository Presistence.IUserRepository
-	iUserRepository = DBRepositories.UserRepository{
-		Generic: userGenericRepository,
-	}
-
-	var categoryGenericRepository DBRepositories.GenericRepository[Entities.Category]
-	categoryGenericRepository = DBRepositories.GenericRepository[Entities.Category]{
-		Context: db,
-	}
-	var iCategoryRepository Presistence.ICategoryRepository
-	iCategoryRepository = DBRepositories.CategoryRepository{
-		Generic: categoryGenericRepository,
-	}
-
 	r := gin.Default()
 
 	accountGroup := r.Group("/Account")
 	categoriesGroup := r.Group("/Categories")
-	Controller.AccountController{
-		IUserRepository: iUserRepository,
-		SmsService:      iSMSService,
-		Engine:          accountGroup,
+	productsGroup := r.Group("/Products")
+
+	GinHandler.AccountHandler{
+		Engine: accountGroup,
 	}.RegisterUser().ForgetPassword().ActivateUser()
 
-	Controller.CategoryController{
-		ICategoryRepository: iCategoryRepository,
-		Engine:              categoriesGroup,
+	GinHandler.CategoryHanlder{
+		Engine: categoriesGroup,
 	}.GetCategories().GetCategoryProducts()
+
+	GinHandler.ProductHandler{
+		Engine: productsGroup,
+	}.GetProductDetail()
 
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.Run()

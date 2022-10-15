@@ -12,7 +12,7 @@ type ActivationByCodeCommandHandler struct {
 	SmsService      Infrastructure.ISMSService
 }
 
-func (handler ActivationByCodeCommandHandler) CommandHandler(command ActivationByCodeCommand, userId string) Common.ResponseModel[string] {
+func (handler ActivationByCodeCommandHandler) HandlerFunc(command ActivationByCodeCommand, userId string) Common.ResponseModel[string] {
 	user := handler.IUserRepository.GetById(userId)
 	if user.Activation_Code == command.ActivationCode {
 		user.Is_Active = true

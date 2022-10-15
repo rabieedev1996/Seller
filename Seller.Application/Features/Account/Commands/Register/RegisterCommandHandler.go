@@ -17,7 +17,7 @@ type RegisterCommandHandler struct {
 	SmsService      Infrastructure.ISMSService
 }
 
-func (handler RegisterCommandHandler) CommandHandler(command RegisterCommand) Common.ResponseModel[string] {
+func (handler RegisterCommandHandler) HandlerFunc(command RegisterCommand) Common.ResponseModel[string] {
 	user := handler.IUserRepository.GetByUsername(strconv.FormatInt(command.PhoneNumber, 10))
 	hash, _ := bcrypt.GenerateFromPassword([]byte(command.Password), bcrypt.DefaultCost)
 

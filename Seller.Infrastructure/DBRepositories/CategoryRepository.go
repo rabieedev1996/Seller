@@ -13,7 +13,7 @@ type CategoryRepository struct {
 func (r CategoryRepository) Init() {
 }
 
-func (r CategoryRepository) GetById(id string) Entities.Category {
+func (r CategoryRepository) GetById(id int) Entities.Category {
 	return r.Generic.GetById(id)
 }
 func (r CategoryRepository) GetAll() []Entities.Category {

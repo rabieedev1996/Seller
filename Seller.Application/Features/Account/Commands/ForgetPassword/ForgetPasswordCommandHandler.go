@@ -13,7 +13,7 @@ type ForgetPasswordCommandHandler struct {
 	SmsService      Infrastructure.ISMSService
 }
 
-func (handler ForgetPasswordCommandHandler) CommandHandler(command ForgetPasswordCommand) Common.ResponseModel[string] {
+func (handler ForgetPasswordCommandHandler) HandlerFunc(command ForgetPasswordCommand) Common.ResponseModel[string] {
 	user := handler.IUserRepository.GetByUsername(strconv.FormatInt(command.PhoneNumber, 10))
 	user.Activation_Code = Common.GetRandomCode(100000, 999999)
 	handler.IUserRepository.Update(user, user.Id)
