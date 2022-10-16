@@ -4,49 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="GetCategories Service">
-      <change afterPath="$PROJECT_DIR$/Seller.Api/Controllers/ProductController.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Api/GinHandlers/AccountHandler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Api/GinHandlers/CategoryHandler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Api/GinHandlers/ProductHandler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Common/DBUtility.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Contract/Infrastructure/IRedisService.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IWarehouseRepository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Basket/Commands/AddToBasket/AddToBasketCommand.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Basket/Commands/AddToBasket/AddToBasketCommandHandler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Basket/Commands/AddToBasket/AddToBasketVm.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Product/Queries/GetProductDetail/GetProductQuery.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Product/Queries/GetProductDetail/GetProductQueryHandler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Product/Queries/GetProductDetail/GetProductQueryVM.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Domain/Entities/Warehouse.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Domain/QueryModels/GetProductPropertiesResult.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/WarehouseRepository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Seller.Infrastructure/Service/RedisService.go" afterDir="false" />
+    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="Sync">
+      <change afterPath="$PROJECT_DIR$/Seller.Api/Controllers/CommonController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Api/GinHandlers/CommonHandler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Common/FileUtility.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Contract/Infrastructure/IUploadFileService.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IFileRepository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Features/Common/Command/UploadFileCommand/UploadFileVm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Model/UploadFileServiceDTO.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Application/Model/UploadFileUtilityDTO.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Domain/Entities/File.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/FileRepository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Seller.Infrastructure/Service/UploadFileService.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Api/Controllers/AccountController.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Api/Controllers/AccountController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Api/Controllers/CategoryController.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Api/Controllers/CategoryController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/ICategoryRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/ICategoryRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IProductRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/IProductRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/ISelectableValueRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Contract/Presistence/ISelectableValueRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategories/GetCategoriesQuery.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Category/Queries/GetCategories/GetCategoriesQuery.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategories/GetCategoriesQueryHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Category/Queries/GetCategories/GetCategoriesQueryHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategories/GetCategoriesVM.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Category/Queries/GetCategories/GetCategoriesVM.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategoryProducts/GetCategoryProductsQuery.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Category/Queries/GetCategoryProducts/GetCategoryProductsQuery.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategoryProducts/GetCategoryProductsQueryHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Category/Queries/GetCategoryProducts/GetCategoryProductsQueryHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Category/Queries/GetCategoryProducts/GetCategoryProductsVM.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Category/Queries/GetCategoryProducts/GetCategoryProductsVM.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ActivationByCode/ActivationByCodeCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ActivationByCode/ActivationByCodeCommandHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ForgetPassword/ForgetPasswordCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ForgetPassword/ForgetPasswordCommandHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/Register/RegisterCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/Register/RegisterCommandHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Domain/Entities/Product.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Domain/Entities/Product.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Domain/Entities/SelectableValue.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Domain/Entities/SelectableValue.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/CategoryRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/ProductRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/ProductRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/SelectableValueRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/DBRepositories/SelectableValueRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/docs/docs.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Common/Command/UploadFileCommand/UploadFileCommand.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Common/Command/UploadFileCommand/UploadFileCommand.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Common/Command/UploadFileCommand/UploadFileCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Common/Command/UploadFileCommand/UploadFileCommandHandler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,33 +51,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;configurable..is.expanded&quot;: &quot;false&quot;,
-    &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Learning/Go/seller/Seller/Seller.Api/GinHandlers&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "configurable..is.expanded": "false",
+    "configurable.GoLibrariesConfigurable.is.expanded": "true",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "F:/Learning/Go/seller/Seller/Seller.Application/Model",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "http.proxy"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Learning\Go\seller\Seller\Seller.Api\GinHandlers" />
+      <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Model" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Infrastructure\DBRepositories" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Contract\Presistence" />
-      <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Features\Account\Category\Queries" />
-      <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Features\Account\Commands" />
+      <recent name="F:\Learning\Go\seller\Seller\Seller.Domain\Entities" />
+      <recent name="F:\Learning\Go\seller\Seller\Seller.Api\Controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Features\Account\Commands" />
@@ -115,14 +88,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build Seller">
-    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="Seller" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
     <configuration name="go build Seller" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Seller" />
       <working_directory value="$PROJECT_DIR$" />
@@ -156,15 +121,6 @@
       <package value="Seller" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/Seller.Api/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
-      <module name="Seller" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="DIRECTORY" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="SwaggerCodegen">
@@ -233,6 +189,8 @@
       <workItem from="1665044529989" duration="2131000" />
       <workItem from="1665070980773" duration="12300000" />
       <workItem from="1665847093247" duration="642000" />
+      <workItem from="1665849464666" duration="12066000" />
+      <workItem from="1665945425344" duration="7145000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1663703099831</created>
@@ -304,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664570666283</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Sync">
+      <created>1665849797969</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665849797969</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +297,8 @@
     <MESSAGE value="Register Service" />
     <MESSAGE value="Add Swagger to Project" />
     <MESSAGE value="GetCategories Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="GetCategories Service" />
+    <MESSAGE value="Sync" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sync" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
