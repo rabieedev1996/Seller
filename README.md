@@ -10,4 +10,5 @@ To develop this project, I have used clean architecture, which includes the foll
 <li>Presentation (final web service): Api, Controllers and DI Handlers</li>
 </ul>
 In the image below, an overview of the architecture and components of the project is specified.</br>
-Postgresql is also used as  database. To connect to the database, I have used the repository pattern with generic, which is based on the implementation of GORM ORM and Raw Query.
+Postgresql is also used as  database. To connect to the database, I have used the repository pattern with generic, which is based on the implementation of GORM ORM and Raw Query.</br>
+Also, the Gin framework has been used for routing in the project
