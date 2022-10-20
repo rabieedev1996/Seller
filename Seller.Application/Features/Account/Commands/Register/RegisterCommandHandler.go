@@ -46,5 +46,5 @@ func (handler RegisterCommandHandler) HandlerFunc(command RegisterCommand) Commo
 	tokenExp := time.Now().Add(2 * time.Minute)
 	token, _ := Common.GenerateToken(user.Id, tokenExp)
 
-	return (Common.ResponseModel[string]{}).ApiResponse(token, Common.SUCCESS)
+	return (Common.ResponseModel[string]{}).ApiResponse(&token, Common.STATUS_SUCCESS)
 }

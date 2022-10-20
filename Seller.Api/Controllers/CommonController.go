@@ -4,7 +4,9 @@ import (
 	"Seller/Seller.Application/Common"
 	"Seller/Seller.Application/Contract/Presistence"
 	"Seller/Seller.Application/Features/Common/Command/UploadFileCommand"
+	"bytes"
 	"github.com/gin-gonic/gin"
+	"io"
 	"net/http"
 )
 
@@ -15,17 +17,26 @@ type CommonController struct {
 }
 
 func (controller CommonController) UploadFile() *CommonController {
-	header, _ := controller.Context.FormFile("uploadfile")
-	var fileBytes []byte
-	file, _ := header.Open()
-	file.Read(fileBytes)
+
+	file, header, err := controller.Context.Request.FormFile("file")
+	//defer file.Close()
+	if err != nil {
+		result := (Common.ResponseModel[UploadFileCommand.UploadFileVm]{}).ApiResponse(nil, Common.STATUS_FILE_EMPETY)
+		controller.Context.JSON(http.StatusOK, result)
+	}
+
+	buf := bytes.NewBuffer(nil)
+	if _, err := io.Copy(buf, file); err != nil {
+		result := (Common.ResponseModel[UploadFileCommand.UploadFileVm]{}).ApiResponse(nil, Common.STATUS_FILE_EMPETY)
+		controller.Context.JSON(http.StatusOK, result)
+	}
 
 	handler := UploadFileCommand.UploadFileCommandHandler{
 		IFileRepository: controller.IFileRepository,
 		FileUtility:     controller.FileUtility,
 	}
 	uploadFileCommand := UploadFileCommand.UploadFileCommand{
-		FileBytes:  fileBytes,
+		FileBytes:  buf.Bytes(),
 		FileLength: header.Size,
 		FileName:   header.Filename,
 	}

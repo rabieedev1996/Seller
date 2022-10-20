@@ -28,5 +28,5 @@ func (handler GetCategoryProductsHandler) CommandHandler(query GetCategoryProduc
 		mapper.AutoMapper(&item, &categoryVm)
 		resultData = append(resultData, categoryVm)
 	}
-	return (Common.ResponseModel[[]GetCategoryProductsVm]{}).ApiResponse(resultData, Common.SUCCESS)
+	return (Common.ResponseModel[[]GetCategoryProductsVm]{}).ApiResponse(&resultData, Common.STATUS_SUCCESS)
 }

@@ -25,5 +25,5 @@ func (handler GetCategoriesQueryHandler) HandlerFunc(query GetCategoriesQuery) C
 		mapper.AutoMapper(&item, &categoryVm)
 		resultData = append(resultData, categoryVm)
 	}
-	return (Common.ResponseModel[[]GetCategoriesVm]{}).ApiResponse(resultData, Common.SUCCESS)
+	return (Common.ResponseModel[[]GetCategoriesVm]{}).ApiResponse(&resultData, Common.STATUS_SUCCESS)
 }

@@ -18,10 +18,10 @@ func (handler ActivationByCodeCommandHandler) HandlerFunc(command ActivationByCo
 		user.Is_Active = true
 		handler.IUserRepository.Update(&user, user.Id)
 	} else {
-		return (Common.ResponseModel[string]{}).ApiResponse("", Common.INVALID_ACTIVATION_CODE)
+		return (Common.ResponseModel[string]{}).ApiResponse(nil, Common.STATUS_INVALID_ACTIVATION_CODE)
 	}
 	tokenExp := time.Now().AddDate(1, 0, 0)
 	token, _ := Common.GenerateToken(user.Id, tokenExp)
 
-	return (Common.ResponseModel[string]{}).ApiResponse(token, Common.SUCCESS)
+	return (Common.ResponseModel[string]{}).ApiResponse(&token, Common.STATUS_SUCCESS)
 }

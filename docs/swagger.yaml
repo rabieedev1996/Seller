@@ -218,6 +218,18 @@ paths:
       summary: Get Category Products
       tags:
       - Categories
+  /Common/UploadFile:
+    post:
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Common.ResponseModel-string'
+      security:
+      - bearer: []
+      summary: Upload Single File
+      tags:
+      - Common
   /Products/GetProductDetail:
     get:
       parameters:

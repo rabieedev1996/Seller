@@ -34,7 +34,7 @@ func (handler GetProductQueryHandler) HandlerFunc(query GetProductQuery) Common.
 	productVm = handler.fillProperties(query, &productVm)
 	productVm = handler.fillSelectables(query, productCategory, &productVm)
 
-	return (Common.ResponseModel[GetProductQueryVM]{}).ApiResponse(productVm, Common.SUCCESS)
+	return (Common.ResponseModel[GetProductQueryVM]{}).ApiResponse(&productVm, Common.STATUS_SUCCESS)
 }
 
 func (handler GetProductQueryHandler) fillProperties(query GetProductQuery, productVm *GetProductQueryVM) GetProductQueryVM {

@@ -2,7 +2,7 @@ package GinHandler
 
 import (
 	"Seller/Config"
-	Controller "Seller/Seller.Api/Controllers"
+	"Seller/Seller.Api/Controllers"
 	"Seller/Seller.Api/Middlewares"
 	"Seller/Seller.Application/Common"
 	"Seller/Seller.Application/Contract/Infrastructure"

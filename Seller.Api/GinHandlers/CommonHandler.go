@@ -29,19 +29,19 @@ func (hanlder CommonHandler) UploadFile() *CommonHandler {
 
 func (hanlder CommonHandler) createController(c *gin.Context) Controller.CommonController {
 	db := Config.GetDatabaseConnection()
-
+	iFileRepository := DBRepositories.FileRepository{
+		Generic: Common.GetGenericRepository[Entities.File](db),
+	}
 	var uploadFileService Infrastructure.IUploadFileService
 	uploadFileService = Service.ArvanCloudUploadFileService{}
 	fileUtility := Common.FileUtility{
 		UploadFileService: uploadFileService,
-		IFileRepository:   nil,
+		IFileRepository:   iFileRepository,
 	}
 	controller := Controller.CommonController{
-		Context: c,
-		IFileRepository: DBRepositories.FileRepository{
-			Generic: Common.GetGenericRepository[Entities.File](db),
-		},
-		FileUtility: fileUtility,
+		Context:         c,
+		IFileRepository: iFileRepository,
+		FileUtility:     fileUtility,
 	}
 	return controller
 }

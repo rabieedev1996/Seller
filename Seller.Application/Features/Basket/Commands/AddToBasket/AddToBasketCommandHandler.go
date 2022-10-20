@@ -14,5 +14,5 @@ type AddToBasketCommandHandler struct {
 
 func (handler AddToBasketCommandHandler) HandlerFunc(command AddToBasketCommand) Common.ResponseModel[string] {
 
-	return (Common.ResponseModel[string]{}).ApiResponse("", Common.SUCCESS)
+	return (Common.ResponseModel[string]{}).ApiResponse("", Common.STATUS_SUCCESS)
 }

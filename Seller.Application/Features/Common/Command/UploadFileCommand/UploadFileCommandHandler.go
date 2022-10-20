@@ -25,7 +25,7 @@ func (handler UploadFileCommandHandler) HandlerFunc(command UploadFileCommand) C
 	entity := handler.FileUtility.UploadFile(uploadFileModel)
 	result := UploadFileVm{
 		FileId: entity.Id,
-		Url:    entity.Base_Url + "/" + entity.Relative_Url,
+		Url:    entity.Base_Url + entity.Relative_Url,
 	}
-	return (Common.ResponseModel[UploadFileVm]{}).ApiResponse(result, Common.SUCCESS)
+	return (Common.ResponseModel[UploadFileVm]{}).ApiResponse(&result, Common.STATUS_SUCCESS)
 }

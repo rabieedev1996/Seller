@@ -173,6 +173,27 @@ const docTemplate = `{
                 }
             }
         },
+        "/Common/UploadFile": {
+            "post": {
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": [
+                    "Common"
+                ],
+                "summary": "Upload Single File",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Common.ResponseModel-string"
+                        }
+                    }
+                }
+            }
+        },
         "/Products/GetProductDetail": {
             "get": {
                 "security": [
