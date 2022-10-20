@@ -13,4 +13,4 @@ In the image below, an overview of the architecture and components of the projec
 Postgresql is also used as  database. To connect to the database, I have used the repository pattern with generic, which is based on the implementation of GORM ORM and Raw Query.</br>
 Also, the Gin framework has been used for routing in the project
   </br>
-<img src="https://classicode.org/seller.png" />
+<img src="https://classicode.org/seller1.png" />
