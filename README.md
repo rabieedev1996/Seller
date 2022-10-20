@@ -14,3 +14,5 @@ Postgresql is also used as  database. To connect to the database, I have used th
 Also, the Gin framework has been used for routing in the project
   </br>
 <img src="https://classicode.org/seller1.png" />
+
+<a href="https://classicode.org/sellerfull.png" >click to see full size image</a>
