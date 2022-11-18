@@ -5,7 +5,7 @@ import (
 	"gorm.io/gorm"
 )
 
-var DbConnectionString = "host=localhost user=postgres password=123456 dbname=Seller port=5432"
+var DbConnectionString = "host=192.168.179.130 user=postgres password=123456 dbname=Seller port=5432"
 
 func GetDatabaseConnection() *gorm.DB {
 	db, _ := gorm.Open(postgres.Open(DbConnectionString), &gorm.Config{})

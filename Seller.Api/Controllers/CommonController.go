@@ -30,16 +30,16 @@ func (controller CommonController) UploadFile() *CommonController {
 		result := (Common.ResponseModel[UploadFileCommand.UploadFileVm]{}).ApiResponse(nil, Common.STATUS_FILE_EMPETY)
 		controller.Context.JSON(http.StatusOK, result)
 	}
-
-	handler := UploadFileCommand.UploadFileCommandHandler{
-		IFileRepository: controller.IFileRepository,
-		FileUtility:     controller.FileUtility,
-	}
 	uploadFileCommand := UploadFileCommand.UploadFileCommand{
 		FileBytes:  buf.Bytes(),
 		FileLength: header.Size,
 		FileName:   header.Filename,
 	}
+	handler := UploadFileCommand.UploadFileCommandHandler{
+		IFileRepository: controller.IFileRepository,
+		FileUtility:     controller.FileUtility,
+	}
+
 	bussinesResult := handler.HandlerFunc(uploadFileCommand)
 	controller.Context.JSON(http.StatusOK, bussinesResult)
 	return &controller

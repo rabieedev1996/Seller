@@ -4,28 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="File Utility and Service">
+    <list default="true" id="ca9cdfee-f7cb-4e46-9efc-60f8d1fd9840" name="Changes" comment="Sync">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DatabaseConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DatabaseConfig.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seller.Api/Controllers/CommonController.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Api/Controllers/CommonController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Api/GinHandlers/AccountHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Api/GinHandlers/AccountHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Api/GinHandlers/CommonHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Api/GinHandlers/CommonHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Common/ApiResponseUtility.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Common/ApiResponseUtility.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Common/FileUtility.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Common/FileUtility.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ActivationByCode/ActivationByCodeCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ActivationByCode/ActivationByCodeCommandHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ForgetPassword/ForgetPasswordCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/ForgetPassword/ForgetPasswordCommandHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/Register/RegisterCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Account/Commands/Register/RegisterCommandHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Basket/Commands/AddToBasket/AddToBasketCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Basket/Commands/AddToBasket/AddToBasketCommandHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Category/Queries/GetCategories/GetCategoriesQueryHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Category/Queries/GetCategories/GetCategoriesQueryHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Category/Queries/GetCategoryProducts/GetCategoryProductsQueryHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Category/Queries/GetCategoryProducts/GetCategoryProductsQueryHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Common/Command/UploadFileCommand/UploadFileCommandHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Common/Command/UploadFileCommand/UploadFileCommandHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Features/Product/Queries/GetProductDetail/GetProductQueryHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Features/Product/Queries/GetProductDetail/GetProductQueryHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Application/Model/UploadFileUtilityDTO.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Application/Model/UploadFileUtilityDTO.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seller.Infrastructure/Service/UploadFileService.go" beforeDir="false" afterPath="$PROJECT_DIR$/Seller.Infrastructure/Service/UploadFileService.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/docs/docs.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +51,7 @@
     &quot;configurable..is.expanded&quot;: &quot;false&quot;,
     &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Learning/Go/seller/Seller&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Learning/Go/seller/Seller&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -83,18 +65,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Features\Account\Commands" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Model" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Infrastructure\DBRepositories" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Contract\Presistence" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Domain\Entities" />
-      <recent name="F:\Learning\Go\seller\Seller\Seller.Api\Controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Learning\Go\seller\Seller\Seller.Domain\Entities" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Features\Account\Commands" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Features\Account" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Application\Features" />
       <recent name="F:\Learning\Go\seller\Seller\Seller.Application" />
-      <recent name="F:\Learning\Go\seller\Seller\Config" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build Seller/">
@@ -210,7 +192,17 @@
       <workItem from="1666126881942" duration="435000" />
       <workItem from="1666203398253" duration="2268000" />
       <workItem from="1666272192204" duration="1114000" />
-      <workItem from="1666274861085" duration="2760000" />
+      <workItem from="1666274861085" duration="3520000" />
+      <workItem from="1666714814104" duration="3112000" />
+      <workItem from="1666717965855" duration="781000" />
+      <workItem from="1666723055831" duration="238000" />
+      <workItem from="1666726071177" duration="1854000" />
+      <workItem from="1666803673825" duration="24000" />
+      <workItem from="1666860966664" duration="2214000" />
+      <workItem from="1666874607184" duration="221000" />
+      <workItem from="1666875737178" duration="1186000" />
+      <workItem from="1667317743381" duration="1638000" />
+      <workItem from="1668697193965" duration="2491000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1663703099831</created>
@@ -296,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665952694017</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Sync">
+      <created>1666278113665</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1666278113666</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,9 +323,9 @@
     <MESSAGE value="Register Service" />
     <MESSAGE value="Add Swagger to Project" />
     <MESSAGE value="GetCategories Service" />
-    <MESSAGE value="Sync" />
     <MESSAGE value="File Utility and Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="File Utility and Service" />
+    <MESSAGE value="Sync" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sync" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
